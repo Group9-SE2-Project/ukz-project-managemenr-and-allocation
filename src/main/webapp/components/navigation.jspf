@@ -1,0 +1,24 @@
+<nav>
+    <div>Projects Allocation System.</div>
+    <div class="user-profile">
+        <i class="fas fa-user-circle nav-icon"></i>
+        <!--User Profile Link Links-->
+        <div class="auth-links">
+            <%if(user!=null){%>
+            <p>Hi <b><%=user.getFirstName()%></b></p>
+            <form action="logout" method="post">
+                <button class="btn btn-primary d-flex w-100 mt-2 auth-link">
+                    Logout
+                    <i class="fa fa-sign-out-alt link-icon"></i>
+                </button>
+            </form>
+            <%}else{%>
+            <p class="mb-2">Hello, User!</p>
+            <a href="login.jsp" class="auth-link btn btn-primary d-flex mt-2">
+                Login
+                <i class="fa fa-sign-out-alt link-icon"></i>
+            </a>
+            <%}%>
+        </div>
+    </div>
+</nav>

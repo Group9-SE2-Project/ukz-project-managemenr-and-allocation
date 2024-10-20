@@ -1,0 +1,6 @@
+<script src="js/all.min.js"></script>
+<script>
+    document.querySelector(".user-profile").addEventListener('click', ()=>{
+        document.querySelector(".auth-links").classList.toggle("d-block")
+    })
+</script>

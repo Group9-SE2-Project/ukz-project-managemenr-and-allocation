@@ -1,0 +1,100 @@
+<!--Sidebar-->
+<div class="sidebar">
+    <a href="index.jsp" class="sidebar-logo">
+        <div class="circle">
+            <i class="fas fa-project-diagram icon"></i>
+        </div>
+    </a>
+    <div class="sidebar-logo-text">Projects Allocation<br/>System</div>
+
+    <div class="sidebar-links">
+        <p class="links-title">Main Links</p>
+        <% if(user !=null){ %>
+        <a href="dashboard.jsp" class="sidebar-link">
+            <div class="sidebar-link-wrapper">
+                <i class="fas fa-house-damage icon"></i>
+                <span>Dashboard</span>
+            </div>
+        </a>
+        <% } %>
+        <a href="index.jsp" class="sidebar-link">
+            <div class="sidebar-link-wrapper">
+                <i class="fas fa-house-damage icon"></i>
+                <span>Home</span>
+            </div>
+        </a>
+        <% if(user!=null && user.getRole().equals("admin")){ %>
+        <a href="courses.jsp" class="sidebar-link">
+            <div class="sidebar-link-wrapper">
+                <i class="fas fa-book-open-reader icon"></i>
+                <span>Courses</span>
+            </div>
+        </a>
+        <a href="lecturers.jsp" class="sidebar-link">
+            <div class="sidebar-link-wrapper">
+                <i class="fas fa-user-graduate icon"></i>
+                <span>Lecturers</span>
+            </div>
+        </a>
+        <a href="students.jsp" class="sidebar-link">
+            <div class="sidebar-link-wrapper">
+                <i class="fas fa-graduation-cap icon"></i>
+                <span>Students</span>
+            </div>
+        </a>
+        <a href="projects.jsp" class="sidebar-link">
+            <div class="sidebar-link-wrapper">
+                <i class="fas fa-project-diagram icon"></i>
+                <span>Projects</span>
+            </div>
+        </a>
+        <%}%>
+        <%--        <% if(user !=null && user.getRole().equals("student")){ %>--%>
+        <%--        --%>
+        <%--        <% } %>--%>
+        <% if(user !=null && user.getRole().equals("lecturer")){ %>
+        <a href="#" class="sidebar-link">
+            <div class="sidebar-link-wrapper">
+                <i class="fa fa-graduation-cap icon"></i>
+                <span>Students</span>
+            </div>
+        </a>
+        <a href="dashboard.jsp" class="sidebar-link">
+            <div class="sidebar-link-wrapper">
+                <i class="fas fa-cog icon"></i>
+                <span>Projects</span>
+            </div>
+        </a>
+        <% } %>
+        <a href="dashboard.jsp" class="sidebar-link">
+            <div class="sidebar-link-wrapper">
+                <i class="fas fa-cog icon"></i>
+                <span>Settings</span>
+            </div>
+        </a>
+        <a href="features.jsp" class="sidebar-link">
+            <div class="sidebar-link-wrapper">
+                <i class="fas fa-list icon"></i>
+                <span>Features</span>
+            </div>
+        </a>
+
+        <p class="links-title">Auth Links</p>
+        <% if(user ==null){ %>
+        <a href="login.jsp" class="sidebar-link">
+            <div class="sidebar-link-wrapper">
+                <i class="fa fa-lock icon"></i>
+                <span>User Login</span>
+            </div>
+        </a>
+        <%}else{%>
+        <form action="logout" method="post">
+            <button type="submit" class="sidebar-link d-flex align-items-center justify-content-between btn btn-primary">
+                <i class="fas fa-sign-out-alt icon"></i>
+                <span style="font-size: 13px" class="text-uppercase">User Logout</span>
+            </button>
+        </form>
+        <%}%>
+    </div>
+</div>
+<!--Sidebar Ends-->
